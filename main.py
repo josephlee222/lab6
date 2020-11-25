@@ -1,41 +1,31 @@
-class Computer:
-    def __init__(self, computer_type, computer_model, computer_os, computer_storage, computer_ram):
-        self.computer_type = computer_type
-        self.computer_model = computer_model
-        self.computer_os = computer_os
-        self.computer_storage = computer_storage
-        self.computer_ram = computer_ram
+class Vehicle:
+    def __init__(self, number_of_wheels, type_of_tank, seating_capacity, maximum_velocity):
+        self.number_of_wheels = number_of_wheels
+        self.type_of_tank = type_of_tank
+        self.seating_capacity = seating_capacity
+        self.maximum_velocity = maximum_velocity
 
-    def playGame(self, game):
-        print("%s (%s) playing %s" % (self.computer_type, self.computer_model, game))
-
-
-class Desktop(Computer):
-    def __init__(self, computer_model, computer_os, computer_storage, computer_ram):
-        Computer.__init__(self, "Desktop", computer_model, computer_os, computer_storage, computer_ram)
+    def drive(self):
+        print("The vehicle is in driving mode now")
 
 
-class Laptop(Computer):
-    def __init__(self, computer_model, computer_os, computer_storage, computer_ram):
-        Computer.__init__(self, "Laptop", computer_model, computer_os, computer_storage, computer_ram)
+# vios = Vehicle("4", "petrol", 5, 180)
+# print(vios.number_of_wheels)
+# print(vios.type_of_tank)
+# print(vios.seating_capacity)
+# print(vios.maximum_velocity)
+#
+# vios.drive()
 
 
-chromebook = Laptop("Chromebook", "Linux", "500GB", "4GB DDr3")
-aftershock = Desktop("Aftershock Desktop", "Windows", "1TB", "16GB GDDr5")
+class ElectricCar(Vehicle):
+    def __init__(self, number_of_wheels, seating_capacity, maximum_velocity):
+        Vehicle.__init__(self, number_of_wheels, "Electric", seating_capacity, maximum_velocity)
 
-print("---------------------------")
-print(chromebook.computer_type)
-print(chromebook.computer_model)
-print(chromebook.computer_os)
-print(chromebook.computer_storage)
-print(chromebook.computer_ram)
-print("---------------------------")
-print(aftershock.computer_type)
-print(aftershock.computer_model)
-print(aftershock.computer_os)
-print(aftershock.computer_storage)
-print(aftershock.computer_ram)
-print("---------------------------")
-chromebook.playGame("Team Fortress 2")
-aftershock.playGame("Factorio")
 
+blueSG = ElectricCar("4", 5, 150)
+print(blueSG.number_of_wheels)
+print(blueSG.type_of_tank)
+print(blueSG.seating_capacity)
+print(blueSG.maximum_velocity)
+blueSG.drive()
